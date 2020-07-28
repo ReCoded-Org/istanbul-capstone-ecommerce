@@ -24,4 +24,4 @@ yarn-debug.log*
 yarn-error.log*
 
 
-src/components/config/private.js
+src/components/config

@@ -1,10 +1,9 @@
 import * as firebase from "firebase";
 import "firebase/firestore";
 import "firebase/database";
-import { API_KEY } from "./private";
 
 var firebaseConfig = {
-  apiKey: API_KEY,
+  apiKey: "AIzaSyCh4oNUuWlrY8QZMGwZ4zOivJYwSi_ezbE",
   authDomain: "testcapstone-project.firebaseapp.com",
   databaseURL: "https://testcapstone-project.firebaseio.com",
   projectId: "testcapstone-project",
