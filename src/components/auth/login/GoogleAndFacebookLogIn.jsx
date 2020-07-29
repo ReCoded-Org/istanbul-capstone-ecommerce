@@ -14,13 +14,12 @@ export default function GoogleAndFacebookLogIn() {
       imageUrl: user.photoURL,
       isAdmin: false,
     };
-    // console.log(info.userId)
     const createNewSubCollection = await db
       .collection("users")
       .doc(info.userId)
       .collection("liked")
       .add({
-        liked: "0",
+        liked: 0,
       });
     await db.collection("users").doc(info.userId).set(info);
   };
@@ -34,18 +33,14 @@ export default function GoogleAndFacebookLogIn() {
         postData(user);
       })
       .catch(function (error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = error.credential;
+        console.log(error.message);
       });
   };
 
   return (
     <div>
-      <button onClick={() => logIn(googleProvider)}> Log in with Google</button>
+      <button onClick={() => logIn(googleProvider)}>Log in with Google</button>
       <button onClick={() => logIn(facebookProvider)}>
-        {" "}
         Log in with Facebook
       </button>
     </div>

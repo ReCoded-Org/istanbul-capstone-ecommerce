@@ -27,10 +27,10 @@ export default function SignUp() {
   return (
     <div>
       <h5>Sign Up</h5>
-      <form onSubmit={(e) => createNewUser(e)}>
-        <input type="text" id="nameField" placeholder="Name" />
-        <input type="email" id="emailField" placeholder="Email" />
-        <input type="password" id="passwordField" placeholder="Password" />
+      <form onSubmit={createNewUser}>
+        <input type="text" placeholder="Name" />
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
         <button type="submit">Sign Up</button>
       </form>
     </div>

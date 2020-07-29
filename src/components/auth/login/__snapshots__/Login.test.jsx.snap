@@ -9,12 +9,10 @@ Array [
     onSubmit={[Function]}
   >
     <input
-      id="emailField"
       placeholder="Email"
       type="email"
     />
     <input
-      id="passwordField"
       placeholder="Password"
       type="password"
     />
@@ -33,12 +31,11 @@ Array [
     <button
       onClick={[Function]}
     >
-       Log in with Google
+      Log in with Google
     </button>
     <button
       onClick={[Function]}
     >
-       
       Log in with Facebook
     </button>
   </div>,

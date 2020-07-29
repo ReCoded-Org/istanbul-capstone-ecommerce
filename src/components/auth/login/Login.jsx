@@ -9,7 +9,6 @@ const LogInForm = () => {
 
   const userLogout = () => {
     auth.signOut().then(() => {
-      console.log("user logged out");
       setIsAdmin(false);
     });
   };
@@ -18,12 +17,10 @@ const LogInForm = () => {
     const email = e.target[0].value;
     const password = e.target[1].value;
     const userLogin = await auth.signInWithEmailAndPassword(email, password);
-    console.log(userLogin.user.uid);
     const loggedInUserName = await db
       .collection("users")
       .doc(userLogin.user.uid)
       .get();
-    console.log(loggedInUserName.data());
     setIsAdmin(loggedInUserName.data().isAdmin);
   };
 
@@ -31,9 +28,9 @@ const LogInForm = () => {
     <>
       {isAdmin && <AddProducts />}
       <h5>sign in</h5>
-      <form onSubmit={(e) => userLogin(e)}>
-        <input type="email" id="emailField" placeholder="Email" />
-        <input type="password" id="passwordField" placeholder="Password" />
+      <form onSubmit={userLogin}>
+        <input type="email" placeholder="Email" />
+        <input type="password" placeholder="Password" />
         <button type="submit">Log in</button>
       </form>
 
